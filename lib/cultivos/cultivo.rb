@@ -1,8 +1,11 @@
 class Cultivo
-    attr_reader :name, :description, :gei
+    attr_reader :name, :description, :gei, :terr
     
-    def initialize(name, description, gei)
-        @name, @description, @gei = name, description, gei
+    def initialize(name, description, gei, terr)
+        @name = name
+        @description = description
+        @gei = gei
+        @terr = terr
     end
 
     def getName()
@@ -15,5 +18,9 @@ class Cultivo
 
     def getGei()
         return @gei
+    end
+
+    def getTerr()
+        return @terr
     end
 end
