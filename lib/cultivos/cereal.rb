@@ -1,3 +1,3 @@
 class Cereal < Cultivo
-
+    
 end

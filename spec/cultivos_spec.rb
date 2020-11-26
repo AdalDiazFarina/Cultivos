@@ -108,5 +108,13 @@ end
 
 
 RSpec.describe Cereal do
-    
+    before :each do
+        @cereal_1 = Cereal.new()
+    end 
+
+    context "Comprobando que es cultivo" do
+        it "Es un cultivo" do
+            expect(@cereal_1.is_a?Cultivo).to eq(true)
+        end
+    end
 end
