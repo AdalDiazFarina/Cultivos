@@ -124,6 +124,10 @@ RSpec.describe Cereal do
         end
         it "Es un Numeric" do
             expect(@cereal_1.is_a?Numeric).to eq(false)
+        end
+        it "Se espera que una isntancia de la clase Cereal sea comparable" do
+            expect(@cereal_1.is_a?Comparable).to eq(true)
         end 
+
     end
 end
