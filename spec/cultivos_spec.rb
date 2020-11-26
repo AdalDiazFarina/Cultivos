@@ -26,7 +26,7 @@ RSpec.describe Cultivo do
             expect(@cultivo_1.getTerr()).to eq(0.3)
         end
         it "Get price" do 
-            expect(@cultivo_1.getPrice().to eq())
+            expect(@cultivo_1.getPrice()).to eq(1.45)
         end
     end
 
