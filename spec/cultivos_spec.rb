@@ -134,6 +134,9 @@ RSpec.describe Cereal do
     context "Comprobando que los nuevos atributos de Cereal que no hereda de la clase padre" do
         it "Comprobar si se asigna el tipo de grano" do
             expect(@cereal_1.tipo_grano).to eq("Corto")
-        end   
+        end  
+        it "Comprobar si se asigna la estación de siembra" do
+            expect(@cereal_1.estacion_siembra).to eq("Primavera")
+        end    
     end
 end
