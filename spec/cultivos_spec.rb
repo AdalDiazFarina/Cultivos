@@ -1,6 +1,6 @@
 RSpec.describe Cultivo do
     before :each do
-        @cultivo_1 = Cultivo.new("Platano", "Fruta de color amarilla y forma alargada", 300, 0.3)
+        @cultivo_1 = Cultivo.new("Platano", "Fruta de color amarilla y forma alargada", 300, 0.3, 1.45)
     end 
     
     context "Almacenamiento del nombre y la descripción de un cultivo" do
@@ -24,6 +24,9 @@ RSpec.describe Cultivo do
         end
         it "Get tereno utilizado" do
             expect(@cultivo_1.getTerr()).to eq(0.3)
+        end
+        it "Get price" do 
+            expect(@cultivo_1.getPrice().to eq())
         end
     end
 
