@@ -1,4 +1,5 @@
 class Cultivo
+    include Comparable
     attr_reader :name, :description, :gei, :terr, :price, :cost
 
     def initialize(name, description, gei, terr, price, cost)
