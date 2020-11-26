@@ -16,9 +16,11 @@ RSpec.describe Cultivo do
         it "Get el nombre del cultivo" do
             expect(@cultivo_1.getName()).to eq("Platano")
         end
-
-        it "Get la descripción del cultivo" do
+        it "Get el description del cultivo" do
             expect(@cultivo_1.getDescription()).to eq("Fruta de color amarilla y forma alargada")
+        end
+        it "Get emisiones de gases de efecto invernadero" do
+            expect(@cultivo_1.getGei()).to eq(300)
         end
     end
 
