@@ -36,7 +36,7 @@ end
 
 RSpec.describe Hortaliza do
     before :each do
-        @hortaliza_1 = Hortaliza.new("zanahoria", "Hortaliza de color naranja y forma alargada", 300, 0.3, 1.45, 0.40)
+        @hortaliza_1 = Hortaliza.new("zanahoria", "Hortaliza de color naranja y forma alargada", 400, 0.2, 1.55, 0.30)
     end 
 
     context "Almacenamiento del nombre y la descripción de una hortaliza" do
@@ -45,6 +45,27 @@ RSpec.describe Hortaliza do
         end
         it "Se almacena correctamente la descripcion" do
             expect(@hortaliza_1.description).to eq("Hortaliza de color naranja y forma alargada")
+        end
+    end
+
+    context "Utilizando los getters de la clase padre para el hijo" do 
+        it "Get el nombre de la hortaliza" do
+            expect(@hortaliza_1.getName()).to eq("zanahoria")
+        end
+        it "Get el description de la hortaliza" do
+            expect(@hortaliza_1.getDescription()).to eq("Hortaliza de color naranja y forma alargada")
+        end
+        it "Get emisiones de gases de efecto invernadero" do
+            expect(@hortaliza_1.getGei()).to eq(400)
+        end
+        it "Get tereno utilizado" do
+            expect(@hortaliza_1.getTerr()).to eq(0.2)
+        end
+        it "Get price" do 
+            expect(@hortaliza_1.getPrice()).to eq(1.55)
+        end
+        it "Get coste de producción" do
+            expect(@hortaliza_1.getCost()).to eq(0.30)
         end
     end
 end
