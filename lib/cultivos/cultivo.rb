@@ -4,4 +4,8 @@ class Cultivo
     def initialize(name, description)
         @name, @description = name, description
     end
+
+    def getName()
+        return @name
+    end
 end

@@ -1,4 +1,4 @@
-Rsepc.describe Cultivo do
+RSpec.describe Cultivo do
     before :each do
         @cultivo_1 = Cultivo.new("Platano", "Fruta de color amarilla y forma alargada")
     end 
@@ -8,13 +8,13 @@ Rsepc.describe Cultivo do
             expect(@cultivo_1.name).to eq("Platano")
         end
         it "Se almacena correctamente la descripcion" do
-            expect(@cultivo_1.description).to eq("Platano")
+            expect(@cultivo_1.description).to eq("Fruta de color amarilla y forma alargada")
         end
     end
 
     context "Getters de la clase cultivo" do 
         it "Get el nombre del cultivo" do
-            expect(@cultivo.getName()).to eq("Platano")
+            expect(@cultivo_1.getName()).to eq("Platano")
         end
     end
 
