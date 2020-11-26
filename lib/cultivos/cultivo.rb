@@ -1,6 +1,6 @@
 class Cultivo
     attr_reader :name, :description, :gei, :terr, :price, :cost
-    
+
     def initialize(name, description, gei, terr, price, cost)
         @name = name
         @description = description
