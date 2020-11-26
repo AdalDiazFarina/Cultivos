@@ -72,7 +72,7 @@ end
 
 RSpec.describe Fruta do
     before :each do
-        @fruta_1 = Fruta.new("Platano", "Fruta de color amarilla y forma alargada", 300, 0.3, 1.45, 0.40)
+        @fruta_1 = Fruta.new("Platano", "Fruta de color amarilla y forma alargada", 250, 0.25, 1.40, 0.30)
     end 
     
     context "Almacenamiento del nombre y la descripción de un cultivo" do
@@ -81,6 +81,27 @@ RSpec.describe Fruta do
         end
         it "Se almacena correctamente la descripcion" do
             expect(@fruta_1.description).to eq("Fruta de color amarilla y forma alargada")
+        end
+    end
+
+    context "Utilizando los getters de la clase padre para el hijo" do 
+        it "Get el nombre de la hortaliza" do
+            expect(@fruta_1.getName()).to eq("Platano")
+        end
+        it "Get el description de la hortaliza" do
+            expect(@fruta_1.getDescription()).to eq("Fruta de color amarilla y forma alargada")
+        end
+        it "Get emisiones de gases de efecto invernadero" do
+            expect(@fruta_1.getGei()).to eq(250)
+        end
+        it "Get tereno utilizado" do
+            expect(@fruta_1.getTerr()).to eq(0.25)
+        end
+        it "Get price" do 
+            expect(@fruta_1.getPrice()).to eq(1.40)
+        end
+        it "Get coste de producción" do
+            expect(@fruta_1.getCost()).to eq(0.30)
         end
     end
 end
