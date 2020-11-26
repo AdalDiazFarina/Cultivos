@@ -109,7 +109,7 @@ end
 
 RSpec.describe Cereal do
     before :each do
-        @cereal_1 = Cereal.new("avena", "Un tipo de cereal", 1.0, 2.0, 3.0, 4.0)
+        @cereal_1 = Cereal.new("avena", "Un tipo de cereal", 1.0, 2.0, 3.0, 4.0, "Corto")
     end 
 
     context "Comprobando que es cultivo" do
@@ -129,5 +129,11 @@ RSpec.describe Cereal do
             expect(@cereal_1.is_a?Comparable).to eq(true)
         end 
 
+    end
+
+    context "Comprobando que los nuevos atributos de Cereal que no hereda de la clase padre" do
+        it "Comprobar si se asigna el tipo de grano" do
+            expect(@cereal_1.tipo_grano).to eq("Corto")
+        end   
     end
 end
