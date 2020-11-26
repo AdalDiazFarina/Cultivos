@@ -109,7 +109,7 @@ end
 
 RSpec.describe Cereal do
     before :each do
-        @cereal_1 = Cereal.new("avena", "Un tipo de cereal", 1.0, 2.0, 3.0, 4.0, "Corto")
+        @cereal_1 = Cereal.new("avena", "Un tipo de cereal", 1.0, 2.0, 3.0, 4.0, "Corto", "Primavera")
     end 
 
     context "Comprobando que es cultivo" do
