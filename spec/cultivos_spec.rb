@@ -1,6 +1,6 @@
 RSpec.describe Cultivo do
     before :each do
-        @cultivo_1 = Cultivo.new("Platano", "Fruta de color amarilla y forma alargada")
+        @cultivo_1 = Cultivo.new("Platano", "Fruta de color amarilla y forma alargada", 300)
     end 
     
     context "Almacenamiento del nombre y la descripción de un cultivo" do
