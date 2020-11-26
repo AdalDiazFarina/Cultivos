@@ -122,5 +122,8 @@ RSpec.describe Cereal do
         it "Es un String" do
             expect(@cereal_1.is_a?String).to eq(false)
         end
+        it "Es un Numeric" do
+            expect(@cereal_1.is_a?Numeric).to eq(false)
+        end 
     end
 end
