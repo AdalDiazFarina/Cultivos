@@ -12,4 +12,10 @@ Rsepc.describe Cultivo do
         end
     end
 
+    context "Getters de la clase cultivo" do 
+        it "Get el nombre del cultivo" do
+            expect(@cultivo.getName()).to eq("Platano")
+        end
+    end
+
 end
