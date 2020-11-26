@@ -48,3 +48,18 @@ RSpec.describe Hortaliza do
         end
     end
 end
+
+RSpec.describe Fruta do
+    before :each do
+        @fruta_1 = Fruta.new("Platano", "Fruta de color amarilla y forma alargada", 300, 0.3, 1.45, 0.40)
+    end 
+    
+    context "Almacenamiento del nombre y la descripción de un cultivo" do
+        it "Se almacena correctamente el nombre" do
+            expect(@fruta_1.name).to eq("Platano")
+        end
+        it "Se almacena correctamente la descripcion" do
+            expect(@fruta_1.description).to eq("Fruta de color amarilla y forma alargada")
+        end
+    end
+end
