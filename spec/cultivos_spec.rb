@@ -116,5 +116,8 @@ RSpec.describe Cereal do
         it "Es un cultivo" do
             expect(@cereal_1.is_a?Cultivo).to eq(true)
         end
+        it "Es un cereal" do
+            expect(@cereal_1.is_a?Cereal).to eq(true)
+        end
     end
 end
