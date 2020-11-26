@@ -110,6 +110,8 @@ end
 RSpec.describe Cereal do
     before :each do
         @cereal_1 = Cereal.new("avena", "Un tipo de cereal", 1.0, 2.0, 3.0, 4.0, "Corto", "Primavera")
+        @cereal_2 = Cereal.new("avena", "Un tipo de cereal", 1.0, 2.0, 3.0, 4.0, "Corto", "Primavera")
+        
     end 
 
     context "Comprobando que es cultivo" do
@@ -139,4 +141,10 @@ RSpec.describe Cereal do
             expect(@cereal_1.estacion_siembra).to eq("Primavera")
         end    
     end
+
+    # context "Cereales comparables sengún el coste de producción y el precio de venta" do
+    #     it "Comparables según el coste de producción" do
+    #         result =
+    #     end
+    # end
 end
