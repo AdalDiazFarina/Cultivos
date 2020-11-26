@@ -105,3 +105,8 @@ RSpec.describe Fruta do
         end
     end
 end
+
+
+RSpec.describe Cereal do
+    
+end
