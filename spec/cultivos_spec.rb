@@ -32,5 +32,19 @@ RSpec.describe Cultivo do
             expect(@cultivo_1.getCost()).to eq(0.40)
         end
     end
+end
 
+RSpec.describe Hortaliza do
+    before :each do
+        @hortaliza_1 = Hortaliza.new("zanahoria", "Hortaliza de color naranja y forma alargada", 300, 0.3, 1.45, 0.40)
+    end 
+
+    context "Almacenamiento del nombre y la descripción de una hortaliza" do
+        it "Se almacena correctamente el nombre" do
+            expect(@hortaliza_1.name).to eq("zanahoria")
+        end
+        it "Se almacena correctamente la descripcion" do
+            expect(@hortaliza_1.description).to eq("Hortaliza de color naranja y forma alargada")
+        end
+    end
 end
