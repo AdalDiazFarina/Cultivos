@@ -8,4 +8,8 @@ class Cultivo
     def getName()
         return @name
     end
+
+    def getDescription()
+        return @description
+    end
 end
