@@ -18,4 +18,8 @@ class Fruta < Cultivo
     def initialize(name, gei, terr, price, cost)
         super(name, gei, terr, price, cost)
     end
+
+    def to_s
+		super
+	end
 end

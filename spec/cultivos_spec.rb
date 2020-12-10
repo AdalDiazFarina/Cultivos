@@ -10,7 +10,7 @@ RSpec.describe Cultivo do
     end
 
     context "Descripción de un cultivo" do
-        it "Descripcion de un producto" do 
+        it "Probando mostrar la descripcion de un cultivo" do 
             expect(@cultivo_1.to_s).to eq("Cultivo(Platano, 300, 0.3, 1.45, 0.4)")
         end
     end
@@ -72,6 +72,12 @@ RSpec.describe Fruta do
     context "Almacenamiento del nombre y la descripción de un cultivo" do
         it "Se almacena correctamente el nombre" do
             expect(@fruta_1.name).to eq("Platano")
+        end
+    end
+
+    context "Descripción de un fruta" do
+        it "Probando mostrar la descripcion de una fruta" do 
+            expect(@fruta_1.to_s).to eq("Fruta(Platano, 250, 0.25, 1.4, 0.3)")
         end
     end
 
