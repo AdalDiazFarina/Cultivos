@@ -12,6 +12,12 @@ RSpec.describe Cultivo do
         end
     end
 
+    context "Descripción de un cultivo" do
+        it "Descripcion de un producto" do 
+            expect(@cultivo_1.to_s).to eq("(Platano, 300, 0.3, 1.45, 0.40)")
+        end
+    end
+
     context "Getters de la clase cultivo" do 
         it "Get el nombre del cultivo" do
             expect(@cultivo_1.getName()).to eq("Platano")
@@ -104,4 +110,47 @@ RSpec.describe Fruta do
             expect(@fruta_1.getCost()).to eq(0.30)
         end
     end
+end
+
+
+RSpec.describe Cereal do
+    before :each do
+        @cereal_1 = Cereal.new("avena", "Un tipo de cereal", 1.0, 2.0, 3.0, 4.0, "Corto", "Primavera")
+        @cereal_2 = Cereal.new("avena", "Un tipo de cereal", 1.0, 2.0, 3.0, 4.0, "Corto", "Primavera")
+        
+    end 
+
+    context "Comprobando que es cultivo" do
+        it "Es un cultivo" do
+            expect(@cereal_1.is_a?Cultivo).to eq(true)
+        end
+        it "Es un cereal" do
+            expect(@cereal_1.is_a?Cereal).to eq(true)
+        end
+        it "Es un String" do
+            expect(@cereal_1.is_a?String).to eq(false)
+        end
+        it "Es un Numeric" do
+            expect(@cereal_1.is_a?Numeric).to eq(false)
+        end
+        it "Se espera que una isntancia de la clase Cereal sea comparable" do
+            expect(@cereal_1.is_a?Comparable).to eq(true)
+        end 
+
+    end
+
+    context "Comprobando que los nuevos atributos de Cereal que no hereda de la clase padre" do
+        it "Comprobar si se asigna el tipo de grano" do
+            expect(@cereal_1.tipo_grano).to eq("Corto")
+        end  
+        it "Comprobar si se asigna la estación de siembra" do
+            expect(@cereal_1.estacion_siembra).to eq("Primavera")
+        end    
+    end
+
+    # context "Cereales comparables sengún el coste de producción y el precio de venta" do
+    #     it "Comparables según el coste de producción" do
+    #         result =
+    #     end
+    # end
 end

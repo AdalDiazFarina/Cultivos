@@ -15,16 +15,8 @@
 # * getCost
 
 class Cultivo
+    include Comparable
     attr_reader :name, :description, :gei, :terr, :price, :cost
-    
-    # Constructor de la clase Cultivo
-    # Parámetros:
-    # * name: Nombre del cultivo
-    # * description: Descripción sobre el cultivo
-    # * gei: Emisión de gases de efecto invernadero
-    # * terr: Terreno usado
-    # * price: Precio del cultivo
-    # * cost: Coste de cultivarlo
 
     def initialize(name, description, gei, terr, price, cost)
         @name = name
