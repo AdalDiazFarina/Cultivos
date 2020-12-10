@@ -24,4 +24,8 @@ class Cereal < Cultivo
     def densidadSiembra()
         return ((@npmc * @pmg)/100) / (@pg * @pu * @gl)
     end
+
+    def numeroPlantas()
+        return (@pml * 100)/@ds
+    end
 end
