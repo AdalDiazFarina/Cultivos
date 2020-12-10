@@ -163,6 +163,18 @@ RSpec.describe Cereal do
     context "Nuevos atributos de Cereal" do
         it "Comprobar si se asigna NPMC" do
             expect(@cereal_1.npmc).to eq(380)
-        end  
+        end
+        it "Comprobar si se asigna PMG" do
+            expect(@cereal_1.pmg).to eq(45)
+        end
+        it "Comprobar si se asigna PG" do
+            expect(@cereal_1.pg).to eq(0.94)
+        end
+        it "Comprobar si se asigna PU" do
+            expect(@cereal_1.pu).to eq(0.92)
+        end
+        it "Comprobar si se asigna GL" do
+            expect(@cereal_1.gl).to eq(0.75)
+        end
     end
 end
