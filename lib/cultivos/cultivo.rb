@@ -15,6 +15,7 @@
 # * getCost
 
 class Cultivo
+    include Comparable
     attr_reader :name, :gei, :terr, :price, :cost
 
     def initialize(name, gei, terr, price, cost)

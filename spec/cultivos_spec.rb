@@ -145,7 +145,7 @@ RSpec.describe Cereal do
         end
     end
 
-    context "Cereales comparables sengún el precio de venta" do
+    context "Cereales comparables" do
         it "Comparar con < o <=" do
             expect(@cereal_1 < @cereal_2).to eq(true)
             expect(@cereal_1 <= @cereal_2).to eq(true)
@@ -157,5 +157,12 @@ RSpec.describe Cereal do
         it "Comparar con ==" do
             expect(@cereal_1 == @cereal_2).to eq(false)
         end
+    end
+
+
+    context "Nuevos atributos de Cereal" do
+        it "Comprobar si se asigna NPMC" do
+            expect(@cereal_1.NPMC).to eq(380)
+        end  
     end
 end
