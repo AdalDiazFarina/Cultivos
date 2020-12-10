@@ -109,84 +109,103 @@ end
 
 RSpec.describe Cereal do
     before :each do
-        @cereal_1 = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, 380, 45, 0.94, 0.92, 0.75, 83, 20, "Corto", "Primavera")
-        @cereal_2 = Cereal.new("Arroz", 1.5, 2.5, 3.5, 4.5, 315, 42, 0.91, 0.93, 0.85, 96, 17, "Largo", "Verano")
-        
+        @avena = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, 380, 45, 0.94, 0.92, 0.75, 83, 20, "Corto", "Primavera")
+        @arroz = Cereal.new("Arroz", 1.5, 2.5, 3.5, 4.5, 315, 42, 0.91, 0.93, 0.85, 96, 17, "Largo", "Verano")
+        @cebada = Cereal.new("Arroz", 1.0, 2.0, 3.0, 4.0, 200, 40, 0.93, 0.99, 0.81, 90, 76, "Corto", "Otoño")
+        @centeno = Cereal.new("Centeno", 1.5, 2.5, 3.5, 4.5, 320, 35, 0.97, 0.99, 0.87, 78, 30, "Corto", "Otoño")
+        @espelta = Cereal.new("Centeno", 1.0, 2.0, 3.0, 4.0, 280, 41, 0.92, 0.94, 0.79, 75, 17, "Largo", "Invierno")
+        @maiz = Cereal.new("Centeno", 1.5, 2.5, 3.5, 4.5, 100, 32, 0.95, 0.95, 0.95, 20, 70, "Corto", "Primavera")
+        @quinoa = Cereal.new("Centeno", 1.0, 2.0, 3.0, 4.0, 180, 30, 0.90, 0.91, 0.83, 60, 80, "Corto", "Primavera")
+        @trigo = Cereal.new("Centeno", 1.5, 2.5, 3.5, 4.5, 250, 39, 0.96, 0.98, 0.80, 52, 15, "Largo", "Invierno")
     end 
 
     context "Comprobando que es cultivo" do
         it "Es un cultivo" do
-            expect(@cereal_1.is_a?Cultivo).to eq(true)
+            expect(@avena.is_a?Cultivo).to eq(true)
         end
         it "Es un cereal" do
-            expect(@cereal_1.is_a?Cereal).to eq(true)
+            expect(@avena.is_a?Cereal).to eq(true)
         end
         it "Es un String" do
-            expect(@cereal_1.is_a?String).to eq(false)
+            expect(@avena.is_a?String).to eq(false)
         end
         it "Es un Numeric" do
-            expect(@cereal_1.is_a?Numeric).to eq(false)
+            expect(@avena.is_a?Numeric).to eq(false)
         end
         it "Se espera que una isntancia de la clase Cereal sea comparable" do
-            expect(@cereal_1.is_a?Comparable).to eq(true)
+            expect(@avena.is_a?Comparable).to eq(true)
         end 
 
     end
 
     context "Nuevos atributos de cereal" do
         it "Comprobar si se asigna el tipo de grano" do
-            expect(@cereal_1.tipo_grano).to eq("Corto")
+            expect(@avena.tipo_grano).to eq("Corto")
         end  
         it "Comprobar si se asigna la estación de siembra" do
-            expect(@cereal_1.estacion_siembra).to eq("Primavera")
+            expect(@avena.estacion_siembra).to eq("Primavera")
         end
         it "Descripción de un cereal" do
-            expect(@cereal_1.to_s).to eq("Cereal(avena, 1.0, 2.0, 3.0, 4.0)(Corto, Primavera)")
+            expect(@avena.to_s).to eq("Cereal(avena, 1.0, 2.0, 3.0, 4.0)(Corto, Primavera)")
         end
         it "Comprobar si se asigna NPMC" do
-            expect(@cereal_1.npmc).to eq(380)
+            expect(@avena.npmc).to eq(380)
         end
         it "Comprobar si se asigna PMG" do
-            expect(@cereal_1.pmg).to eq(45)
+            expect(@avena.pmg).to eq(45)
         end
         it "Comprobar si se asigna PG" do
-            expect(@cereal_1.pg).to eq(0.94)
+            expect(@avena.pg).to eq(0.94)
         end
         it "Comprobar si se asigna PU" do
-            expect(@cereal_1.pu).to eq(0.92)
+            expect(@avena.pu).to eq(0.92)
         end
         it "Comprobar si se asigna GL" do
-            expect(@cereal_1.gl).to eq(0.75)
+            expect(@avena.gl).to eq(0.75)
         end
         it "Comprobar si se asigna PML" do
-            expect(@cereal_1.pml).to eq(83)
+            expect(@avena.pml).to eq(83)
         end
         it "Comprobar si se asigna DS" do
-            expect(@cereal_1.ds).to eq(20)
+            expect(@avena.ds).to eq(20)
         end
 
     end
 
     context "Cereales comparables" do
         it "Comparar con < o <=" do
-            expect(@cereal_1 < @cereal_2).to eq(true)
-            expect(@cereal_1 <= @cereal_2).to eq(true)
+            expect(@avena < @arroz).to eq(true)
+            expect(@avena <= @arroz).to eq(true)
         end
         it "Comparar con > o >=" do
-            expect(@cereal_1 > @cereal_2).to eq(false)
-            expect(@cereal_1 >= @cereal_2).to eq(false)
+            expect(@avena > @arroz).to eq(false)
+            expect(@avena >= @arroz).to eq(false)
         end
         it "Comparar con ==" do
-            expect(@cereal_1 == @cereal_2).to eq(false)
+            expect(@avena == @arroz).to eq(false)
         end
     end
 
     context "Calculos con la clase cereal" do
         it "Densidad de la siembra de un cereal" do
-            expect(@cereal_1.densidadSiembra().truncate(2)).to eq(263.64)
+            expect(@avena.densidadSiembra().truncate(2)).to eq(263.64)
+            expect(@arroz.densidadSiembra().truncate(2)).to eq(183.49)
+            expect(@cebada.densidadSiembra().truncate(2)).to eq(107.27)
+            expect(@centeno.densidadSiembra().truncate(2)).to eq(134.05)
+            expect(@espelta.densidadSiembra().truncate(2)).to eq(166.86)
+            expect(@maiz.densidadSiembra().truncate(2)).to eq(37.32)
+            expect(@quinoa.densidadSiembra().truncate(2)).to eq(79.43)
+            expect(@trigo.densidadSiembra().truncate(2)).to eq(128.87)
         end
         it "Número de plantas logradas por metro cuadrado de un cereal" do
-            expect(@cereal_1.numeroPlantas().truncate(2)).to eq(415)
+            expect(@avena.numeroPlantas().truncate(2)).to eq(415)
+            expect(@arroz.numeroPlantas().truncate(2)).to eq(564)
+            expect(@cebada.numeroPlantas().truncate(2)).to eq(118)
+            expect(@centeno.numeroPlantas().truncate(2)).to eq(260)
+            expect(@espelta.numeroPlantas().truncate(2)).to eq(441)
+            expect(@maiz.numeroPlantas().truncate(2)).to eq(28)
+            expect(@quinoa.numeroPlantas().truncate(2)).to eq(75)
+            expect(@trigo.numeroPlantas().truncate(2)).to eq(346)
         end
     end
 
