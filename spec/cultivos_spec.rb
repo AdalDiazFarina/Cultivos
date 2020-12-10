@@ -214,6 +214,11 @@ RSpec.describe Cereal do
         it "cereal tiene la densidad más baja y su valor" do
             expect(@cereales.min_by { |x| x.densidadSiembra()}).to eq(@maiz)
         end
+        it "Calcular para todos los cereales de grano corto y estación de siembra en otoño el número de plantas que se logran en una hectárea" do
+            arrayCereales = @cereales.find_all{ |x| x.tipo_grano == "Corto" && x.estacion_siembra == "Otoño"}
+            array = arrayCereales.collect{ |x| x.numeroPlantas()}
+            expect(array).to eq([415, 118, 260])
+        end
         
         
     end
