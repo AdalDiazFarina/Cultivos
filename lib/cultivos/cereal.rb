@@ -11,7 +11,7 @@ class Cereal < Cultivo
         super + "(#{@tipo_grano}, #{@estacion_siembra})"
     end
 
-    def <=> other
-		@price <=> other.price
+    def <=> (other)
+		[@coste, @precio] <=> [@other.coste, @other.precio]
 	end
 end
