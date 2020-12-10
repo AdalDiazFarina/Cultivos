@@ -109,8 +109,8 @@ end
 
 RSpec.describe Cereal do
     before :each do
-        @cereal_1 = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, 380, 45, 0.94, 0.92, 0.75, "Corto", "Primavera")
-        @cereal_2 = Cereal.new("Arroz", 1.5, 2.5, 3.5, 4.5, 315, 42, 0.91, 0.93, 0.85, "Largo", "Verano")
+        @cereal_1 = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, 380, 45, 0.94, 0.92, 0.75, 83, 20, "Corto", "Primavera")
+        @cereal_2 = Cereal.new("Arroz", 1.5, 2.5, 3.5, 4.5, 315, 42, 0.91, 0.93, 0.85, 96, 17, "Largo", "Verano")
         
     end 
 
@@ -158,6 +158,13 @@ RSpec.describe Cereal do
         it "Comprobar si se asigna GL" do
             expect(@cereal_1.gl).to eq(0.75)
         end
+        it "Comprobar si se asigna PML" do
+            expect(@cereal_1.pml).to eq(83)
+        end
+        it "Comprobar si se asigna DS" do
+            expect(@cereal_1.ds).to eq(20)
+        end
+
     end
 
     context "Cereales comparables" do
@@ -176,7 +183,7 @@ RSpec.describe Cereal do
 
     context "Calculos con la clase cereal" do
         it "Densidad de la siembra de un cereal" do
-            expect(@cereal_1.densidadSiembra()).to eq(2)
+            expect(@cereal_1.densidadSiembra().truncate(2)).to eq(263.64)
         end
     end
 

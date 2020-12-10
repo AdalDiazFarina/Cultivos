@@ -17,5 +17,9 @@ class Cereal < Cultivo
 
     def <=> (other)
 		[@cost, @price] <=> [other.cost, other.price]
-	end
+    end
+    
+    def densidadSiembra()
+        return ((@npmc * @pmg)/100) / (@pg * @pu * @gl)
+    end
 end
