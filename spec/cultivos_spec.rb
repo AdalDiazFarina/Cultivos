@@ -141,7 +141,7 @@ RSpec.describe Cereal do
             expect(@cereal_1.estacion_siembra).to eq("Primavera")
         end
         it "Descripción de un cereal" do
-            expect(@cereal_1.to_s).to eq("Cereal(avena , 1.0, 2.0, 3.0, 4.0, Corto, Primavera)")
+            expect(@cereal_1.to_s).to eq("Cereal(avena, 1.0, 2.0, 3.0, 4.0)(Corto, Primavera)")
         end
     end
 

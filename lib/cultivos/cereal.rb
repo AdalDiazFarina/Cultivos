@@ -5,4 +5,8 @@ class Cereal < Cultivo
         @tipo_grano = tipo_grano
         @estacion_siembra = estacion_siembra
     end
+
+    def to_s
+        super + "(#{@tipo_grano}, #{@estacion_siembra})"
+    end
 end
