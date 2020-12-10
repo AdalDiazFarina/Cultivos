@@ -185,6 +185,9 @@ RSpec.describe Cereal do
         it "Densidad de la siembra de un cereal" do
             expect(@cereal_1.densidadSiembra().truncate(2)).to eq(263.64)
         end
+        it "Número de plantas logradas por metro cuadrado de un cereal" do
+            expect(@cereal_1.numeroPlantas().truncate(2)).to eq(415)
+        end
     end
 
 
