@@ -146,7 +146,7 @@ RSpec.describe Cereal do
             expect(@avena.estacion_siembra).to eq("Primavera")
         end
         it "Descripción de un cereal" do
-            expect(@avena.to_s).to eq("Cereal(avena, 1.0, 2.0, 3.0, 4.0)(Corto, Primavera)")
+            expect(@avena.to_s).to eq("Cereal(avena, 1.0, 2.0, 3.0, 4.0)(380, 45, 0.94, 0.92, 0.75, 83, 20, Corto, Primavera)")
         end
         it "Comprobar si se asigna NPMC" do
             expect(@avena.npmc).to eq(380)
