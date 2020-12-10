@@ -45,6 +45,12 @@ RSpec.describe Hortaliza do
         end
     end
 
+    context "Descripción de un fruta" do
+        it "Probando mostrar la descripcion de una fruta" do 
+            expect(@fruta_1.to_s).to eq("Fruta(Platano, 250, 0.25, 1.4, 0.3)")
+        end
+    end
+
     context "Utilizando los getters de la clase padre para el hijo" do 
         it "Get el nombre de la hortaliza" do
             expect(@hortaliza_1.getName()).to eq("zanahoria")
