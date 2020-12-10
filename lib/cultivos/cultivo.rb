@@ -13,6 +13,13 @@
 # * getTerr
 # * getPrice
 # * getCost
+#
+# == Parámetros:
+# * name: Nombre de la hortaliza
+# * gei: Emisión de gases de efecto invernadero
+# * terr: Terreno usado
+# * price: Precio de la hortaliza
+# * cost: Coste de cultivarla
 
 class Cultivo
     include Comparable
@@ -26,6 +33,9 @@ class Cultivo
         @cost = cost
     end
 
+    # Representacion en una cadena del objeto
+    # Devuelve::
+    # Una cadena con los atributos del cultivo
     def to_s
         "#{self.class}(#{@name}, #{@gei}, #{@terr}, #{@price}, #{@cost})"
     end

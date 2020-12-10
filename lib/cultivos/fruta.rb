@@ -19,6 +19,9 @@ class Fruta < Cultivo
         super(name, gei, terr, price, cost)
     end
 
+    # Representacion en una cadena del objeto
+    # Devuelve::
+    # Una cadena con los atributos de la fruta
     def to_s
 		super
 	end
