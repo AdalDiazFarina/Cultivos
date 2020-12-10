@@ -133,7 +133,7 @@ RSpec.describe Cereal do
 
     end
 
-    context "Comprobando los nuevos atributos de Cereal que no hereda de la clase padre" do
+    context "Nuevos atributos de cereal" do
         it "Comprobar si se asigna el tipo de grano" do
             expect(@cereal_1.tipo_grano).to eq("Corto")
         end  
@@ -142,6 +142,21 @@ RSpec.describe Cereal do
         end
         it "Descripción de un cereal" do
             expect(@cereal_1.to_s).to eq("Cereal(avena, 1.0, 2.0, 3.0, 4.0)(Corto, Primavera)")
+        end
+        it "Comprobar si se asigna NPMC" do
+            expect(@cereal_1.npmc).to eq(380)
+        end
+        it "Comprobar si se asigna PMG" do
+            expect(@cereal_1.pmg).to eq(45)
+        end
+        it "Comprobar si se asigna PG" do
+            expect(@cereal_1.pg).to eq(0.94)
+        end
+        it "Comprobar si se asigna PU" do
+            expect(@cereal_1.pu).to eq(0.92)
+        end
+        it "Comprobar si se asigna GL" do
+            expect(@cereal_1.gl).to eq(0.75)
         end
     end
 
@@ -159,22 +174,11 @@ RSpec.describe Cereal do
         end
     end
 
-
-    context "Nuevos atributos de Cereal" do
-        it "Comprobar si se asigna NPMC" do
-            expect(@cereal_1.npmc).to eq(380)
-        end
-        it "Comprobar si se asigna PMG" do
-            expect(@cereal_1.pmg).to eq(45)
-        end
-        it "Comprobar si se asigna PG" do
-            expect(@cereal_1.pg).to eq(0.94)
-        end
-        it "Comprobar si se asigna PU" do
-            expect(@cereal_1.pu).to eq(0.92)
-        end
-        it "Comprobar si se asigna GL" do
-            expect(@cereal_1.gl).to eq(0.75)
+    context "Calculos con la clase cereal" do
+        it "Densidad de la siembra de un cereal" do
+            expect(@cereal_1.densidadSiembra()).to eq(2)
         end
     end
+
+
 end
