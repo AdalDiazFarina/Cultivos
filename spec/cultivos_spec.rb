@@ -146,14 +146,13 @@ RSpec.describe Cereal do
     end
 
     context "Cereales comparables sengún el precio de venta" do
-        it "Comparar con <" do
+        it "Comparar con < o <=" do
             expect(@cereal_1.getPrice() < @cereal_2.getPrice()).to eq(true)
+            expect(@cereal_1.getPrice() <= @cereal_2.getPrice()).to eq(true)
         end
-        it "Comparar con >" do
+        it "Comparar con > o >=" do
             expect(@cereal_1.getPrice() > @cereal_2.getPrice()).to eq(false)
-        end
-        it "Comparar con =" do 
-            expect(@cereal_1.getPrice() = @cereal_2.getPrice()).to eq(false)
+            expect(@cereal_1.getPrice() >= @cereal_2.getPrice()).to eq(false)
         end
     end
 end

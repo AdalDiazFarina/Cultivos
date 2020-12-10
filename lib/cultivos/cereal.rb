@@ -10,4 +10,8 @@ class Cereal < Cultivo
     def to_s
         super + "(#{@tipo_grano}, #{@estacion_siembra})"
     end
+
+    def <=> other
+		@price <=> other.price
+	end
 end
