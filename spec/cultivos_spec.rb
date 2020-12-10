@@ -211,6 +211,10 @@ RSpec.describe Cereal do
         it "cereal tiene el coste de produccion y el precio de venta más altos y sus valores" do
             expect(@cereales.max).to eq(@trigo)
         end
+        it "cereal tiene la densidad más baja y su valor" do
+            expect(@cereales.min_by { |x| x.densidadSiembra()}).to eq(@maiz)
+        end
+        
         
     end
 end
