@@ -47,7 +47,7 @@ RSpec.describe Hortaliza do
 
     context "Descripción de un fruta" do
         it "Probando mostrar la descripcion de una fruta" do 
-            expect(@fruta_1.to_s).to eq("Fruta(Platano, 250, 0.25, 1.4, 0.3)")
+            expect(@hortaliza_1.to_s).to eq("Hortaliza(zanahoria, 400, 0.2, 1.55, 0.3)")
         end
     end
 
