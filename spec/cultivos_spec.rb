@@ -110,7 +110,7 @@ end
 RSpec.describe Cereal do
     before :each do
         @cereal_1 = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, "Corto", "Primavera")
-        @cereal_2 = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, "Corto", "Primavera")
+        @cereal_2 = Cereal.new("Arroz", 1.5, 2.5, 3.5, 4.5, "Largo", "Verano")
         
     end 
 
@@ -145,9 +145,15 @@ RSpec.describe Cereal do
         end
     end
 
-    # context "Cereales comparables sengún el coste de producción y el precio de venta" do
-    #     it "Comparables según el coste de producción" do
-    #         result =
-    #     end
-    # end
+    context "Cereales comparables sengún el precio de venta" do
+        it "Comparar con <" do
+            expect(@cereal_1.getPrice() < @cereal_2.getPrice()).to eq(true)
+        end
+        it "Comparar con >" do
+            expect(@cereal_1.getPrice() > @cereal_2.getPrice()).to eq(false)
+        end
+        it "Comparar con =" do 
+            expect(@cereal_1.getPrice() = @cereal_2.getPrice()).to eq(false)
+        end
+    end
 end
