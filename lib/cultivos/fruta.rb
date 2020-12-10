@@ -10,13 +10,12 @@ class Fruta < Cultivo
     # Constructor de la clase Fruta
     # Parámetros:
     # * name: Nombre de la fruta
-    # * description: Descripción sobre la fruta
     # * gei: Emisión de gases de efecto invernadero
     # * terr: Terreno usado
     # * price: Precio de la fruta
     # * cost: Coste de cultivarla
     # Utiliza el constructor de su clase padre cultivo.
-    def initialize(name, description, gei, terr, price, cost)
-        super(name, description, gei, terr, price, cost)
+    def initialize(name, gei, terr, price, cost)
+        super(name, gei, terr, price, cost)
     end
 end

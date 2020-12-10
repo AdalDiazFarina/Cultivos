@@ -16,15 +16,18 @@
 
 class Cultivo
     include Comparable
-    attr_reader :name, :description, :gei, :terr, :price, :cost
+    attr_reader :name, :gei, :terr, :price, :cost
 
-    def initialize(name, description, gei, terr, price, cost)
+    def initialize(name, gei, terr, price, cost)
         @name = name
-        @description = description
         @gei = gei
         @terr = terr
         @price =  price
         @cost = cost
+    end
+
+    def to_s
+        "#{self.class}(#{@name}, #{@gei}, #{@terr}, #{@price}, #{@cost})"
     end
 
     # Getter del nombre del cultivo
@@ -32,13 +35,6 @@ class Cultivo
     # El nombre del cultivo 
     def getName()
         return @name
-    end
-
-    # Getter de la descripción del cultivo
-    # Devuelve:: 
-    # El nombre del cultivo 
-    def getDescription()
-        return @description
     end
 
     # Getter de la emisiones de gases de efecto invernadero que produce el cultivo
