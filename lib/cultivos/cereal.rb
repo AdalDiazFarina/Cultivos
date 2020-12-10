@@ -65,4 +65,5 @@ class Cereal < Cultivo
     def numeroPlantas()
         return (@pml * 100)/@ds
     end
+    
 end

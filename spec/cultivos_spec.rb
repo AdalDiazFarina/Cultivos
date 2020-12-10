@@ -109,14 +109,15 @@ end
 
 RSpec.describe Cereal do
     before :each do
-        @avena = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, 380, 45, 0.94, 0.92, 0.75, 83, 20, "Corto", "Primavera")
-        @arroz = Cereal.new("Arroz", 1.5, 2.5, 3.5, 4.5, 315, 42, 0.91, 0.93, 0.85, 96, 17, "Largo", "Verano")
-        @cebada = Cereal.new("Arroz", 1.0, 2.0, 3.0, 4.0, 200, 40, 0.93, 0.99, 0.81, 90, 76, "Corto", "Otoño")
-        @centeno = Cereal.new("Centeno", 1.5, 2.5, 3.5, 4.5, 320, 35, 0.97, 0.99, 0.87, 78, 30, "Corto", "Otoño")
-        @espelta = Cereal.new("Centeno", 1.0, 2.0, 3.0, 4.0, 280, 41, 0.92, 0.94, 0.79, 75, 17, "Largo", "Invierno")
-        @maiz = Cereal.new("Centeno", 1.5, 2.5, 3.5, 4.5, 100, 32, 0.95, 0.95, 0.95, 20, 70, "Corto", "Primavera")
-        @quinoa = Cereal.new("Centeno", 1.0, 2.0, 3.0, 4.0, 180, 30, 0.90, 0.91, 0.83, 60, 80, "Corto", "Primavera")
-        @trigo = Cereal.new("Centeno", 1.5, 2.5, 3.5, 4.5, 250, 39, 0.96, 0.98, 0.80, 52, 15, "Largo", "Invierno")
+        @avena = Cereal.new("avena", 1.0, 2.0, 0.54, 0.27, 380, 45, 0.94, 0.92, 0.75, 83, 20, "Corto", "Otoño")
+        @arroz = Cereal.new("Arroz", 1.5, 2.5, 0.26, 0.13, 315, 42, 0.91, 0.93, 0.85, 96, 17, "Largo", "Verano")
+        @cebada = Cereal.new("Cebada", 1.0, 2.0, 0.50, 0.25, 200, 40, 0.93, 0.99, 0.81, 90, 76, "Corto", "Otoño")
+        @centeno = Cereal.new("Centeno", 1.5, 2.5, 0.52, 0.26, 320, 35, 0.97, 0.99, 0.87, 78, 30, "Corto", "Otoño")
+        @espelta = Cereal.new("Espelta", 1.0, 2.0, 0.20, 0.10, 280, 41, 0.92, 0.94, 0.79, 75, 17, "Largo", "Invierno")
+        @maiz = Cereal.new("Maiz", 1.5, 2.5, 0.10, 0.03, 100, 32, 0.95, 0.95, 0.95, 20, 70, "Corto", "Primavera")
+        @quinoa = Cereal.new("Quinoa", 1.0, 2.0, 0.44, 0.22, 180, 30, 0.90, 0.91, 0.83, 60, 80, "Corto", "Primavera")
+        @trigo = Cereal.new("Trigo", 1.5, 2.5, 0.48, 0.48, 250, 39, 0.96, 0.98, 0.80, 52, 15, "Largo", "Invierno")
+        @cereales = [@avena, @arroz, @cebada, @centeno, @espelta, @maiz, @quinoa, @trigo]
     end 
 
     context "Comprobando que es cultivo" do
@@ -143,10 +144,10 @@ RSpec.describe Cereal do
             expect(@avena.tipo_grano).to eq("Corto")
         end  
         it "Comprobar si se asigna la estación de siembra" do
-            expect(@avena.estacion_siembra).to eq("Primavera")
+            expect(@avena.estacion_siembra).to eq("Otoño")
         end
         it "Descripción de un cereal" do
-            expect(@avena.to_s).to eq("Cereal(avena, 1.0, 2.0, 3.0, 4.0)(380, 45, 0.94, 0.92, 0.75, 83, 20, Corto, Primavera)")
+            expect(@avena.to_s).to eq("Cereal(avena, 1.0, 2.0, 0.54, 0.27)(380, 45, 0.94, 0.92, 0.75, 83, 20, Corto, Otoño)")
         end
         it "Comprobar si se asigna NPMC" do
             expect(@avena.npmc).to eq(380)
@@ -174,12 +175,12 @@ RSpec.describe Cereal do
 
     context "Cereales comparables" do
         it "Comparar con < o <=" do
-            expect(@avena < @arroz).to eq(true)
-            expect(@avena <= @arroz).to eq(true)
+            expect(@avena < @arroz).to eq(false)
+            expect(@avena <= @arroz).to eq(false)
         end
         it "Comparar con > o >=" do
-            expect(@avena > @arroz).to eq(false)
-            expect(@avena >= @arroz).to eq(false)
+            expect(@avena > @arroz).to eq(true)
+            expect(@avena >= @arroz).to eq(true)
         end
         it "Comparar con ==" do
             expect(@avena == @arroz).to eq(false)
@@ -207,7 +208,9 @@ RSpec.describe Cereal do
             expect(@quinoa.numeroPlantas().truncate(2)).to eq(75)
             expect(@trigo.numeroPlantas().truncate(2)).to eq(346)
         end
+        it "cereal tiene el coste de produccion y el precio de venta más altos y sus valores" do
+            expect(@cereales.max).to eq(@trigo)
+        end
+        
     end
-
-
 end
