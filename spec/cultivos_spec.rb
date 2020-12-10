@@ -109,8 +109,8 @@ end
 
 RSpec.describe Cereal do
     before :each do
-        @cereal_1 = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, "Corto", "Primavera")
-        @cereal_2 = Cereal.new("Arroz", 1.5, 2.5, 3.5, 4.5, "Largo", "Verano")
+        @cereal_1 = Cereal.new("avena", 1.0, 2.0, 3.0, 4.0, 380, "Corto", "Primavera")
+        @cereal_2 = Cereal.new("Arroz", 1.5, 2.5, 3.5, 4.5, 315, "Largo", "Verano")
         
     end 
 
@@ -162,7 +162,7 @@ RSpec.describe Cereal do
 
     context "Nuevos atributos de Cereal" do
         it "Comprobar si se asigna NPMC" do
-            expect(@cereal_1.NPMC).to eq(380)
+            expect(@cereal_1.npmc).to eq(380)
         end  
     end
 end
